@@ -45,15 +45,15 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-11453' class='srclink' href='../../src/x86/task.rs.html#12-23' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-2353' class='srclink' href='../../src/x86/task.rs.html#12-23' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct TaskStateSegment {
-    pub reserved: <a href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub rsp: <a href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[<a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>; 3]</a>,
-    pub reserved2: <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>,
-    pub ist: <a href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[<a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>; 7]</a>,
-    pub reserved3: <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>,
-    pub reserved4: <a href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub iomap_base: <a href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
+    pub reserved: u32,
+    pub rsp: [u64; 3],
+    pub reserved2: u64,
+    pub ist: [u64; 7],
+    pub reserved3: u64,
+    pub reserved4: u16,
+    pub iomap_base: u16,
 }</pre><div class='docblock'><p>In 64-bit mode the TSS holds information that is not
 directly related to the task-switch mechanism,
 but is used for finding kernel level stack

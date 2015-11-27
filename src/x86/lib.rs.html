@@ -82,20 +82,26 @@
 <span id="40">40</span>
 <span id="41">41</span>
 <span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
 </pre><pre class='rust '>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>no_std</span>)]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>no_std</span>, <span class='ident'>core_str_ext</span>, <span class='ident'>core_slice_ext</span>, <span class='ident'>const_fn</span>)]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>asm</span>)]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>no_std</span>]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>cfg_attr</span>(<span class='ident'>test</span>, <span class='ident'>allow</span>(<span class='ident'>unused_features</span>))]</span>
 
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_name</span> <span class='op'>=</span> <span class='string'>&quot;x86&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;lib&quot;</span>]</span>
 
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>test</span>)]</span>
 <span class='attribute'>#[<span class='ident'>macro_use</span>]</span>
-<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>std</span>;
+<span class='kw'>mod</span> <span class='ident'>bitflags</span>;
 
-<span class='attribute'>#[<span class='ident'>macro_use</span>]</span>
-<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>bitflags</span>;
+<span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>bit</span> {
+    ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>:<span class='ident'>expr</span> ) <span class='op'>=&gt;</span> {
+        <span class='number'>1</span> <span class='op'>&lt;&lt;</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>
+    };
+}
 
 <span class='attribute'>#[<span class='ident'>macro_use</span>]</span>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>raw_cpuid</span>;
@@ -103,7 +109,6 @@
 <span class='attribute'>#[<span class='ident'>macro_use</span>]</span>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>phf</span>;
 
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>not</span>(<span class='ident'>test</span>))]</span>
 <span class='kw'>mod</span> <span class='ident'>std</span> {
     <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>core</span>::<span class='ident'>fmt</span>;
     <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>core</span>::<span class='ident'>ops</span>;
@@ -124,7 +129,9 @@
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>perfcnt</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>cpuid</span> {
     <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>raw_cpuid</span>::<span class='op'>*</span>;
-}</pre>
+}
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>tlb</span>;
+</pre>
 </section>
     <section id='search' class="content hidden"></section>
 

@@ -45,24 +45,24 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-10173' class='srclink' href='../src/raw_cpuid/lib.rs.html#1486-1492' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-1500' class='srclink' href='../src/raw_cpuid/lib.rs.html#1552-1558' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct ExtendedStateInfo {
     // some fields omitted
-}</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../raw_cpuid/struct.ExtendedStateInfo.html' title='raw_cpuid::ExtendedStateInfo'>ExtendedStateInfo</a></code></h3><div class='impl-items'><h4 id='method.xcr0' class='method'><code>fn <a href='#method.xcr0' class='fnname'>xcr0</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a></code></h4>
+}</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../raw_cpuid/struct.ExtendedStateInfo.html' title='raw_cpuid::ExtendedStateInfo'>ExtendedStateInfo</a></code></h3><div class='impl-items'><h4 id='method.xcr0' class='method'><code>fn <a href='#method.xcr0' class='fnname'>xcr0</a>(&amp;self) -&gt; u64</code></h4>
 <div class='docblock'><p>Reports the valid bit fields of the lower 32 bits of XCR0. If a bit is 0,
 the corresponding bit field in XCR0 is reserved.</p>
-</div><h4 id='method.xcr0_upper_bits' class='method'><code>fn <a href='#method.xcr0_upper_bits' class='fnname'>xcr0_upper_bits</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+</div><h4 id='method.xcr0_upper_bits' class='method'><code>fn <a href='#method.xcr0_upper_bits' class='fnname'>xcr0_upper_bits</a>(&amp;self) -&gt; u32</code></h4>
 <div class='docblock'><p>Reports the valid bit fields of the upper 32 bits of XCR0. If a bit is 0,
 the corresponding bit field in XCR0 is reserved.</p>
-</div><h4 id='method.maximum_size_enabled_features' class='method'><code>fn <a href='#method.maximum_size_enabled_features' class='fnname'>maximum_size_enabled_features</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+</div><h4 id='method.maximum_size_enabled_features' class='method'><code>fn <a href='#method.maximum_size_enabled_features' class='fnname'>maximum_size_enabled_features</a>(&amp;self) -&gt; u32</code></h4>
 <div class='docblock'><p>Maximum size (bytes, from the beginning of the XSAVE/XRSTOR save area) required by
 enabled features in XCR0. May be different than ECX if some features at the end of the XSAVE save area
 are not enabled.</p>
-</div><h4 id='method.maximum_size_supported_features' class='method'><code>fn <a href='#method.maximum_size_supported_features' class='fnname'>maximum_size_supported_features</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+</div><h4 id='method.maximum_size_supported_features' class='method'><code>fn <a href='#method.maximum_size_supported_features' class='fnname'>maximum_size_supported_features</a>(&amp;self) -&gt; u32</code></h4>
 <div class='docblock'><p>Maximum size (bytes, from the beginning of the XSAVE/XRSTOR save area) of the
 XSAVE/XRSTOR save area required by all supported features in the processor,
 i.e all the valid bit fields in XCR0.</p>
-</div><h4 id='method.has_xsaveopt' class='method'><code>fn <a href='#method.has_xsaveopt' class='fnname'>has_xsaveopt</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h4 id='method.has_xsaveopt' class='method'><code>fn <a href='#method.has_xsaveopt' class='fnname'>has_xsaveopt</a>(&amp;self) -&gt; bool</code></h4>
 <div class='docblock'><p>CPU has xsaveopt feature.</p>
 </div><h4 id='method.iter' class='method'><code>fn <a href='#method.iter' class='fnname'>iter</a>(&amp;self) -&gt; <a class='struct' href='../raw_cpuid/struct.ExtendedStateIter.html' title='raw_cpuid::ExtendedStateIter'>ExtendedStateIter</a></code></h4>
 <div class='docblock'><p>Iterator over extended state enumeration levels &gt;= 2.</p>

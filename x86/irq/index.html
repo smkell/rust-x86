@@ -45,14 +45,16 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-3433' class='srclink' href='../../src/x86/irq.rs.html#1-130' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-1117' class='srclink' href='../../src/x86/irq.rs.html#1-188' title='goto source code'>[src]</a></span></h1>
 <h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
                     <tr class=' module-item'>
                         <td><a class='struct' href='struct.IdtEntry.html'
                                title='x86::irq::IdtEntry'>IdtEntry</a></td>
                         <td class='docblock short'>
-                             <p>A struct describing an interrupt gate.</p>
+                             <p>A struct describing an interrupt gate.  See the Intel manual mentioned
+above for details, specifically, the section &quot;6.14.1 64-Bit Mode IDT&quot;
+and &quot;Table 3-2. System-Segment and Gate-Descriptor Types&quot;.</p>
 
                         </td>
                     </tr>
@@ -91,6 +93,16 @@
                         <td class='docblock short'>
                              <p>0: The fault was caused by a non-present page.
 1: The fault was caused by a page-level protection violation</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='constant' href='constant.PFAULT_ERROR_PK.html'
+                               title='x86::irq::PFAULT_ERROR_PK'>PFAULT_ERROR_PK</a></td>
+                        <td class='docblock short'>
+                             <p>0: The fault was not by protection keys.
+1: There was a protection key violation.</p>
 
                         </td>
                     </tr>

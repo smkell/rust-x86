@@ -275,6 +275,16 @@
 <span id="233">233</span>
 <span id="234">234</span>
 <span id="235">235</span>
+<span id="236">236</span>
+<span id="237">237</span>
+<span id="238">238</span>
+<span id="239">239</span>
+<span id="240">240</span>
+<span id="241">241</span>
+<span id="242">242</span>
+<span id="243">243</span>
+<span id="244">244</span>
+<span id="245">245</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>fmt</span>;
 
@@ -472,6 +482,12 @@
     <span class='doccomment'>/// There is only 1 file for core and offcore events in this format.</span>
     <span class='doccomment'>/// This field is set to 1 for offcore events and 0 for core events.</span>
     <span class='kw'>pub</span> <span class='ident'>offcore</span>: <span class='ident'>bool</span>,
+
+    <span class='kw'>pub</span> <span class='ident'>unit</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span><span class='op'>&gt;</span>,
+
+    <span class='kw'>pub</span> <span class='ident'>filter</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span><span class='op'>&gt;</span>,
+
+    <span class='kw'>pub</span> <span class='ident'>extsel</span>: <span class='ident'>bool</span>
 }
 
 <span class='kw'>impl</span> <span class='ident'>IntelPerformanceCounterDescription</span> {
@@ -483,7 +499,8 @@
            <span class='ident'>sample_after_value</span>: <span class='ident'>u64</span>, <span class='ident'>msr_index</span>: <span class='ident'>MSRIndex</span>, <span class='ident'>msr_value</span>: <span class='ident'>u64</span>, <span class='ident'>taken_alone</span>: <span class='ident'>bool</span>,
            <span class='ident'>counter_mask</span>: <span class='ident'>u8</span>, <span class='ident'>invert</span>: <span class='ident'>bool</span>, <span class='ident'>any_thread</span>: <span class='ident'>bool</span>, <span class='ident'>edge_detect</span>: <span class='ident'>bool</span>, <span class='ident'>pebs</span>:
            <span class='ident'>PebsType</span>, <span class='ident'>precise_store</span>: <span class='ident'>bool</span>, <span class='ident'>data_la</span>: <span class='ident'>bool</span>, <span class='ident'>l1_hit_indication</span>: <span class='ident'>bool</span>,
-           <span class='ident'>errata</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span><span class='op'>&gt;</span>, <span class='ident'>offcore</span>: <span class='ident'>bool</span>) <span class='op'>-&gt;</span> <span class='ident'>IntelPerformanceCounterDescription</span> {
+           <span class='ident'>errata</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span><span class='op'>&gt;</span>, <span class='ident'>offcore</span>: <span class='ident'>bool</span>, <span class='ident'>unit</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span><span class='op'>&gt;</span>,
+           <span class='ident'>filter</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span><span class='op'>&gt;</span>, <span class='ident'>extsel</span>: <span class='ident'>bool</span>) <span class='op'>-&gt;</span> <span class='ident'>IntelPerformanceCounterDescription</span> {
 
         <span class='ident'>IntelPerformanceCounterDescription</span> {
             <span class='ident'>event_code</span>: <span class='ident'>event_code</span>,
@@ -507,7 +524,10 @@
             <span class='ident'>data_la</span>: <span class='ident'>data_la</span>,
             <span class='ident'>l1_hit_indication</span>: <span class='ident'>l1_hit_indication</span>,
             <span class='ident'>errata</span>: <span class='ident'>errata</span>,
-            <span class='ident'>offcore</span>: <span class='ident'>offcore</span>
+            <span class='ident'>offcore</span>: <span class='ident'>offcore</span>,
+            <span class='ident'>unit</span>: <span class='ident'>unit</span>,
+            <span class='ident'>filter</span>: <span class='ident'>filter</span>,
+            <span class='ident'>extsel</span>: <span class='ident'>extsel</span>
         }
     }
 }

@@ -45,17 +45,17 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-10682' class='srclink' href='../src/raw_cpuid/lib.rs.html#1582-1586' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-1565' class='srclink' href='../src/raw_cpuid/lib.rs.html#1648-1652' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct ExtendedState {
     pub ident: <a class='enum' href='../raw_cpuid/enum.ExtendedStateIdent.html' title='raw_cpuid::ExtendedStateIdent'>ExtendedStateIdent</a>,
     // some fields omitted
 }</pre><h2 class='fields'>Fields</h2>
 <table><tr class='stab '>
-                                  <td id='structfield.ident'><code>ident</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../raw_cpuid/struct.ExtendedState.html' title='raw_cpuid::ExtendedState'>ExtendedState</a></code></h3><div class='impl-items'><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+                                  <td id='structfield.ident'><code>ident</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../raw_cpuid/struct.ExtendedState.html' title='raw_cpuid::ExtendedState'>ExtendedState</a></code></h3><div class='impl-items'><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; u32</code></h4>
 <div class='docblock'><p>The size in bytes (from the offset specified in EBX) of the save area
 for an extended state feature associated with a valid sub-leaf index, n.
 This field reports 0 if the sub-leaf index, n, is invalid.</p>
-</div><h4 id='method.offset' class='method'><code>fn <a href='#method.offset' class='fnname'>offset</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+</div><h4 id='method.offset' class='method'><code>fn <a href='#method.offset' class='fnname'>offset</a>(&amp;self) -&gt; u32</code></h4>
 <div class='docblock'><p>The offset in bytes of this extended state components save area
 from the beginning of the XSAVE/XRSTOR area.</p>
 </div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../raw_cpuid/struct.ExtendedState.html' title='raw_cpuid::ExtendedState'>ExtendedState</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
