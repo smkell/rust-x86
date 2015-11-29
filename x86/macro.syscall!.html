@@ -45,7 +45,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-2691' class='srclink' href='../src/x86/syscall.rs.html#17-41' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-2693' class='srclink' href='../src/x86/syscall.rs.html#17-41' title='goto source code'>[src]</a></span></h1>
 <pre class='rust macro'>
 <span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>syscall</span> {
     (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg0</span>:<span class='ident'>expr</span>)
@@ -72,9 +72,7 @@
     (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg0</span>:<span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg1</span>:<span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg2</span>:<span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg3</span>:<span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg4</span>:<span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg5</span>:<span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg6</span>:<span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg7</span>:<span class='ident'>expr</span>)
         <span class='op'>=&gt;</span> ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>crate</span>::<span class='ident'>syscall</span>::<span class='ident'>syscall7</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg0</span> <span class='kw'>as</span> <span class='ident'>u64</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg1</span> <span class='kw'>as</span> <span class='ident'>u64</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg2</span> <span class='kw'>as</span> <span class='ident'>u64</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg3</span> <span class='kw'>as</span> <span class='ident'>u64</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg4</span> <span class='kw'>as</span> <span class='ident'>u64</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg5</span> <span class='kw'>as</span> <span class='ident'>u64</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg6</span> <span class='kw'>as</span> <span class='ident'>u64</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg7</span> <span class='kw'>as</span> <span class='ident'>u64</span>) );
 }</pre>
-<div class='docblock'><p>SYSCALL invokes an OS system-call handler at privilege level 0.</p>
-
-<p>It does so by loading RIP from the IA32_LSTAR MSR (after saving the address of the instruction following SYSCALL into RCX).</p>
+<div class='docblock'><p>It does so by loading RIP from the IA32_LSTAR MSR (after saving the address of the instruction following SYSCALL into RCX).</p>
 
 <p>&quot;A.2 AMD64 Linux Kernel Conventions&quot; of System V Application Binary Interface AMD64 Architecture Processor Supplement:</p>
 

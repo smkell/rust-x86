@@ -3190,12 +3190,16 @@
 <span id="3148">3148</span>
 <span id="3149">3149</span>
 <span id="3150">3150</span>
+<span id="3151">3151</span>
+<span id="3152">3152</span>
 </pre><pre class='rust '>
+<span class='doccomment'>//!  MSR value list and function to read and write them.</span>
+
 <span class='doccomment'>/// Write 64 bits to msr register.</span>
 <span class='kw'>pub</span> <span class='kw'>unsafe</span> <span class='kw'>fn</span> <span class='ident'>wrmsr</span>(<span class='ident'>msr</span>: <span class='ident'>u32</span>, <span class='ident'>value</span>: <span class='ident'>u64</span>) {
     <span class='kw'>let</span> <span class='ident'>low</span> <span class='op'>=</span> <span class='ident'>value</span> <span class='kw'>as</span> <span class='ident'>u32</span>;
     <span class='kw'>let</span> <span class='ident'>high</span> <span class='op'>=</span> (<span class='ident'>value</span> <span class='op'>&gt;&gt;</span> <span class='number'>32</span>) <span class='kw'>as</span> <span class='ident'>u32</span>;
-    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;wrmsr&quot;</span> :: <span class='string'>&quot;{ecx}&quot;</span> (<span class='ident'>msr</span>), <span class='string'>&quot;{eax}&quot;</span> (<span class='ident'>low</span>), <span class='string'>&quot;{edx}&quot;</span> (<span class='ident'>high</span>) );
+    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;wrmsr&quot;</span> :: <span class='string'>&quot;{ecx}&quot;</span> (<span class='ident'>msr</span>), <span class='string'>&quot;{eax}&quot;</span> (<span class='ident'>low</span>), <span class='string'>&quot;{edx}&quot;</span> (<span class='ident'>high</span>) : <span class='string'>&quot;memory&quot;</span> : <span class='string'>&quot;volatile&quot;</span> );
 }
 
 <span class='doccomment'>/// Read 64 bits msr register.</span>
@@ -3203,7 +3207,7 @@
 <span class='kw'>pub</span> <span class='kw'>unsafe</span> <span class='kw'>fn</span> <span class='ident'>rdmsr</span>(<span class='ident'>msr</span>: <span class='ident'>u32</span>) <span class='op'>-&gt;</span> <span class='ident'>u64</span> {
     <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>low</span>: <span class='ident'>u32</span>;
     <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>high</span>: <span class='ident'>u32</span>;
-    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;rdmsr&quot;</span> : <span class='string'>&quot;={eax}&quot;</span> (<span class='ident'>low</span>), <span class='string'>&quot;={edx}&quot;</span> (<span class='ident'>high</span>) : <span class='string'>&quot;{ecx}&quot;</span> (<span class='ident'>msr</span>));
+    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;rdmsr&quot;</span> : <span class='string'>&quot;={eax}&quot;</span> (<span class='ident'>low</span>), <span class='string'>&quot;={edx}&quot;</span> (<span class='ident'>high</span>) : <span class='string'>&quot;{ecx}&quot;</span> (<span class='ident'>msr</span>) : <span class='string'>&quot;memory&quot;</span> : <span class='string'>&quot;volatile&quot;</span>);
 
     ((<span class='ident'>high</span> <span class='kw'>as</span> <span class='ident'>u64</span>) <span class='op'>&lt;&lt;</span> <span class='number'>32</span>) <span class='op'>|</span> (<span class='ident'>low</span> <span class='kw'>as</span> <span class='ident'>u64</span>)
 }

@@ -238,7 +238,11 @@
 <span id="196">196</span>
 <span id="197">197</span>
 <span id="198">198</span>
+<span id="199">199</span>
+<span id="200">200</span>
 </pre><pre class='rust '>
+<span class='doccomment'>//! Program x86 segmentation hardware.</span>
+
 <span class='kw'>use</span> <span class='ident'>core</span>::<span class='ident'>fmt</span>;
 
 <span class='doccomment'>/// Specifies which element to load into a segment from</span>
@@ -402,27 +406,27 @@
 
 <span class='doccomment'>/// Reload stack segment register.</span>
 <span class='kw'>pub</span> <span class='kw'>unsafe</span> <span class='kw'>fn</span> <span class='ident'>load_ss</span>(<span class='ident'>sel</span>: <span class='ident'>SegmentSelector</span>) {
-    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;movw $0, %ss &quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>sel</span>));
+    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;movw $0, %ss &quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>sel</span>) : <span class='string'>&quot;memory&quot;</span>);
 }
 
 <span class='doccomment'>/// Reload data segment register.</span>
 <span class='kw'>pub</span> <span class='kw'>unsafe</span> <span class='kw'>fn</span> <span class='ident'>load_ds</span>(<span class='ident'>sel</span>: <span class='ident'>SegmentSelector</span>) {
-    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;movw $0, %ds &quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>sel</span>));
+    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;movw $0, %ds &quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>sel</span>) : <span class='string'>&quot;memory&quot;</span>);
 }
 
 <span class='doccomment'>/// Reload fs segment register.</span>
 <span class='kw'>pub</span> <span class='kw'>unsafe</span> <span class='kw'>fn</span> <span class='ident'>load_es</span>(<span class='ident'>sel</span>: <span class='ident'>SegmentSelector</span>) {
-    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;movw $0, %es &quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>sel</span>));
+    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;movw $0, %es &quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>sel</span>) : <span class='string'>&quot;memory&quot;</span>);
 }
 
 <span class='doccomment'>/// Reload fs segment register.</span>
 <span class='kw'>pub</span> <span class='kw'>unsafe</span> <span class='kw'>fn</span> <span class='ident'>load_fs</span>(<span class='ident'>sel</span>: <span class='ident'>SegmentSelector</span>) {
-    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;movw $0, %fs &quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>sel</span>));
+    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;movw $0, %fs &quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>sel</span>) : <span class='string'>&quot;memory&quot;</span>);
 }
 
 <span class='doccomment'>/// Reload gs segment register.</span>
 <span class='kw'>pub</span> <span class='kw'>unsafe</span> <span class='kw'>fn</span> <span class='ident'>load_gs</span>(<span class='ident'>sel</span>: <span class='ident'>SegmentSelector</span>) {
-    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;movw $0, %gs &quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>sel</span>));
+    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;movw $0, %gs &quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>sel</span>) : <span class='string'>&quot;memory&quot;</span>);
 }
 
 <span class='doccomment'>/// Reload code segment register.</span>
@@ -435,7 +439,7 @@
          lea 1f(%rip), %rax
          pushq %rax
          lretq
-         1:&quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>sel</span>.<span class='ident'>bits</span>() <span class='kw'>as</span> <span class='ident'>u64</span>) : <span class='string'>&quot;{rax}&quot;</span>);
+         1:&quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>sel</span>.<span class='ident'>bits</span>() <span class='kw'>as</span> <span class='ident'>u64</span>) : <span class='string'>&quot;{rax}&quot;</span> <span class='string'>&quot;memory&quot;</span>);
 }
 </pre>
 </section>

@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["counters",""],["description",""]]});
+initSidebarItems({"mod":[["counters","Performance counter for all Intel architectures."],["description",""]]});

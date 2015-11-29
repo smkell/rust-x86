@@ -45,8 +45,22 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-1114' class='srclink' href='../../src/x86/time.rs.html#4-10' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-1114' class='srclink' href='../../src/x86/time.rs.html#17-23' title='goto source code'>[src]</a></span></h1>
 <pre class='rust fn'>pub unsafe fn rdtsc() -&gt; u64</pre><div class='docblock'><p>Read the time stamp counter.</p>
+
+<p>The RDTSC instruction is not a serializing instruction.
+It does not necessarily wait until all previous instructions
+have been executed before reading the counter. Similarly,
+subsequent instructions may begin execution before the
+read operation is performed. If software requires RDTSC to be
+executed only after all previous instructions have completed locally,
+it can either use RDTSCP or execute the sequence LFENCE;RDTSC.</p>
+
+<h1 id='safety' class='section-header'><a href='#safety'>Safety</a></h1>
+<ul>
+<li>Causes a GP fault if the TSD flag in register CR4 is set and the CPL
+is greater than 0.</li>
+</ul>
 </div></section>
     <section id='search' class="content hidden"></section>
 

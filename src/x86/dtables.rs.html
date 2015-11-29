@@ -68,7 +68,7 @@
 <span id="26">26</span>
 <span id="27">27</span>
 </pre><pre class='rust '>
-<span class='doccomment'>/// Functions and data-structures to load descriptor tables.</span>
+<span class='doccomment'>//! Functions and data-structures to load descriptor tables.</span>
 
 <span class='doccomment'>/// A struct describing a pointer to a descriptor table (GDT / IDT).</span>
 <span class='doccomment'>/// This is in a format suitable for giving to &#39;lgdt&#39; or &#39;lidt&#39;.</span>
@@ -83,17 +83,17 @@
 
 <span class='doccomment'>/// Load GDT table.</span>
 <span class='kw'>pub</span> <span class='kw'>unsafe</span> <span class='kw'>fn</span> <span class='ident'>lgdt</span>(<span class='ident'>gdt</span>: <span class='kw-2'>&amp;</span><span class='ident'>DescriptorTablePointer</span>) {
-    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;lgdt ($0)&quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>gdt</span>));
+    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;lgdt ($0)&quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>gdt</span>) : <span class='string'>&quot;memory&quot;</span>);
 }
 
 <span class='doccomment'>/// Load LDT table.</span>
 <span class='kw'>pub</span> <span class='kw'>unsafe</span> <span class='kw'>fn</span> <span class='ident'>lldt</span>(<span class='ident'>ldt</span>: <span class='kw-2'>&amp;</span><span class='ident'>DescriptorTablePointer</span>) {
-    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;lldt ($0)&quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>ldt</span>));
+    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;lldt ($0)&quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>ldt</span>) : <span class='string'>&quot;memory&quot;</span>);
 }
 
 <span class='doccomment'>/// Load IDT table.</span>
 <span class='kw'>pub</span> <span class='kw'>unsafe</span> <span class='kw'>fn</span> <span class='ident'>lidt</span>(<span class='ident'>idt</span>: <span class='kw-2'>&amp;</span><span class='ident'>DescriptorTablePointer</span>) {
-    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;lidt ($0)&quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>idt</span>));
+    <span class='macro'>asm</span><span class='macro'>!</span>(<span class='string'>&quot;lidt ($0)&quot;</span> :: <span class='string'>&quot;r&quot;</span> (<span class='ident'>idt</span>) : <span class='string'>&quot;memory&quot;</span>);
 }</pre>
 </section>
     <section id='search' class="content hidden"></section>
