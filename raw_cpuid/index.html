@@ -45,19 +45,9 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-0' class='srclink' href='../src/raw_cpuid/lib.rs.html#1-2244' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-0' class='srclink' href='../src/raw_cpuid/lib.rs.html#1-2601' title='goto source code'>[src]</a></span></h1>
 <h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='macro' href='macro.bitflags!.html'
-                               title='raw_cpuid::bitflags!'>bitflags!</a></td>
-                        <td class='docblock short'>
-                             <p>The <code>bitflags!</code> macro generates a <code>struct</code> that holds a set of C-style
-bitmask flags. It is useful for creating typesafe wrappers for C APIs.</p>
-
-                        </td>
-                    </tr>
-                
                     <tr class=' module-item'>
                         <td><a class='macro' href='macro.cpuid!.html'
                                title='raw_cpuid::cpuid!'>cpuid!</a></td>
@@ -211,10 +201,70 @@ If in doubt use <code>CpuId</code> instead.</p>
                     </tr>
                 
                     <tr class=' module-item'>
+                        <td><a class='struct' href='struct.ProcessorFrequencyInfo.html'
+                               title='raw_cpuid::ProcessorFrequencyInfo'>ProcessorFrequencyInfo</a></td>
+                        <td class='docblock short'>
+                             <p>Processor Frequency Information</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
                         <td><a class='struct' href='struct.ProcessorSerial.html'
                                title='raw_cpuid::ProcessorSerial'>ProcessorSerial</a></td>
                         <td class='docblock short'>
                              
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.ProcessorTrace.html'
+                               title='raw_cpuid::ProcessorTrace'>ProcessorTrace</a></td>
+                        <td class='docblock short'>
+                             <p>Processor Trace information sub-leaf.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.ProcessorTraceInfo.html'
+                               title='raw_cpuid::ProcessorTraceInfo'>ProcessorTraceInfo</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.ProcessorTraceIter.html'
+                               title='raw_cpuid::ProcessorTraceIter'>ProcessorTraceIter</a></td>
+                        <td class='docblock short'>
+                             <p>Iterator over the Processor Trace sub-leafs.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.QoSEnforcement.html'
+                               title='raw_cpuid::QoSEnforcement'>QoSEnforcement</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.QoSEnforcementInfo.html'
+                               title='raw_cpuid::QoSEnforcementInfo'>QoSEnforcementInfo</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.QoSEnforcementIter.html'
+                               title='raw_cpuid::QoSEnforcementIter'>QoSEnforcementIter</a></td>
+                        <td class='docblock short'>
+                             <p>Iterator over the QoSEnforcement sub-leafs.</p>
+
                         </td>
                     </tr>
                 
@@ -231,6 +281,15 @@ If in doubt use <code>CpuId</code> instead.</p>
                                title='raw_cpuid::ThermalPowerInfo'>ThermalPowerInfo</a></td>
                         <td class='docblock short'>
                              
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.TscInfo.html'
+                               title='raw_cpuid::TscInfo'>TscInfo</a></td>
+                        <td class='docblock short'>
+                             <p>Contains time stamp counter information.</p>
+
                         </td>
                     </tr>
                 
@@ -254,14 +313,6 @@ If in doubt use <code>CpuId</code> instead.</p>
                     <tr class=' module-item'>
                         <td><a class='enum' href='enum.CacheType.html'
                                title='raw_cpuid::CacheType'>CacheType</a></td>
-                        <td class='docblock short'>
-                             
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='enum' href='enum.ExtendedStateIdent.html'
-                               title='raw_cpuid::ExtendedStateIdent'>ExtendedStateIdent</a></td>
                         <td class='docblock short'>
                              
                         </td>

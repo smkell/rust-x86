@@ -115,6 +115,7 @@
 <span id="73">73</span>
 <span id="74">74</span>
 <span id="75">75</span>
+<span id="76">76</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>cpuid</span>;
 <span class='kw'>use</span> <span class='ident'>phf</span>;
@@ -185,6 +186,7 @@
 
 <span class='attribute'>#[<span class='ident'>test</span>]</span>
 <span class='kw'>fn</span> <span class='ident'>counter_test</span>() {
+    <span class='comment'>// Note: This will silently fail in case the counter is not available.</span>
     <span class='ident'>core_counters</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>cc</span><span class='op'>|</span> {
         <span class='ident'>cc</span>.<span class='ident'>get</span>(<span class='string'>&quot;INST_RETIRED.ANY&quot;</span>).<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>p</span><span class='op'>|</span> {
             <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>p</span>.<span class='ident'>event_name</span> <span class='op'>==</span> <span class='string'>&quot;INST_RETIRED.ANY&quot;</span>);
